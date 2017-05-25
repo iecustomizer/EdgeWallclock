@@ -1,0 +1,610 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link rel="shortcut icon" href="spacex.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="spacex.ico" type="image/vnd.microsoft.icon" />
+    <link rel="icon" href="spacex.png" type="image/png" />
+
+<style type="text/css">
+
+@keyframes demo {
+from {    opacity: 0.9;    animation-timing-function: ease;}
+
+to {    opacity: 0.4;    animation-timing-function: ease;}
+
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: black !important;
+}
+
+body {
+    /*background: url('../Images/backgrounds/brick_bk.jpg') no-repeat center center fixed;*/
+    background: url('brick_bk.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+input{border:none;background:transparent;color:silver;}
+input:focus{outline:1px silver dotted;}
+#q::-ms-clear{
+display:none;
+}
+#divSearch{
+    position:absolute;top:10px; left:10px; height:3em;width:450px;border:none;z-index:99;overflow:hidden
+}
+#frmSearch{
+    margin:0;padding:0
+}
+#cmdSearch{
+    background-color:transparent;border:none;margin:0;padding:0;float:right
+}
+
+#divSquare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 480px;
+    width: 480px;
+    background-color: transparent;
+}
+
+#divbg {
+    background-image: url('IECSSbk.png');
+    background-size: cover;
+    opacity: 1;
+}
+
+#divneon {
+    background-image: url('EdgeNeon.png');
+    background-size: cover;
+}
+
+button.toolbar { width: 60px;    height: 60px;    padding: 0;    border-radius: 5px;    border:none;background-color:transparent;}
+
+button.toolbar:hover {cursor: pointer;}
+button svg path{fill:silver;stroke:darkgray;}
+
+        .blink {
+            animation-delay: 0s;
+            animation-direction: alternate;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-name: demo;
+        }
+
+        .layer0 {
+            z-index: 1;
+        }
+
+        .layer1 {
+            z-index: 2;
+        }
+
+        .layer2 {
+            z-index: 3;
+        }
+
+        .layer3 {
+            z-index: 4;
+        }
+
+        .layer4 {
+            z-index: 5;
+        }
+
+        .layer5 {
+            z-index: 6;
+        }
+
+        #theSVG {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            opacity: 1;
+        }
+
+        #satellite {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: yellow; /*rgba(18, 60, 199, 1);*/
+            background-color: transparent;
+        }
+
+            #satellite::-ms-fill {
+                animation-name: -ms-ring;
+            }
+
+        #divMenu span {
+            color: white;
+            opacity: 0.5;
+        }
+
+            #divMenu span:hover {
+                opacity: 1;
+            }
+        /* Media Queries */
+        /* 480 x 320 Landscape */
+        @media only screen and (device-width:480px) and (device-height:320px) {
+            #divSquare {
+                width: 320px;
+                height: 320px;
+            }
+        }
+        /* 320 x 480 Portrait */
+        @media only screen and (device-width:320px) and (device-height:480px) {
+            #divSquare {
+                width: 320px;
+                height: 320px;
+            }
+        }
+        /* 800 x 480 Landscape */
+        @media only screen and (device-width:800px) and (device-height:480px) {
+            #divSquare {
+                width: 400px;
+                height: 400px;
+            }
+        }
+        /* 480 x 800 Portrait */
+        @media only screen and (device-width:480px) and (device-height:800px) {
+            #divSquare {
+                width: 400px;
+                height: 400px;
+            }
+        }
+        /* 640 x 480 Landscape */
+        @media only screen and (device-width:640px) and (device-height:480px) {
+            #divSquare {
+                width: 400px;
+                height: 400px;
+            }
+        }
+        /* 480 x 640 Portrait */
+        @media only screen and (device-width:480px) and (device-height:640px) {
+            #divSquare {
+                width: 400px;
+                height: 400px;
+            }
+        }
+        /* 800 x 600 Landscape */
+        @media only screen and (device-width:600px) and (device-height:800px) {
+            #divSquare {
+                width: 500px;
+                height: 500px;
+            }
+        }
+        /* 600 x 800 Portrait */
+        @media only screen and (device-width:600px) and (device-height:800px) {
+            #divSquare {
+                width: 500px;
+                height: 500px;
+            }
+        }
+        /* 1024 x 600 Landscape */
+        @media only screen and (device-width:1024px) and (device-height:600px) {
+            #divSquare {
+                width: 600px;
+                height: 600px;
+            }
+        }
+        /* 1024 x 600 Portrait */
+        @media only screen and (device-width:600px) and (device-height:1024px) {
+            #divSquare {
+                width: 600px;
+                height: 600px;
+            }
+        }
+        /* 1024 x 768 Landscape */
+        @media only screen and (device-width:1024px) and (device-height:768px) {
+            #divSquare {
+                width: 600px;
+                height: 600px;
+            }
+        }
+        /* 768 x 1024 Portrait */
+        @media only screen and (device-width:768px) and (device-height:1024px) {
+            #divSquare {
+                width: 600px;
+                height: 600px;
+            }
+        }
+        /* 1280 x 600 Landscape */
+        @media only screen and (device-width:1280px) and (device-height:600px) {
+            #divSquare {
+                width: 600px;
+                height: 600px;
+            }
+        }
+        /* 600 x 1280 Portrait */
+        @media only screen and (device-width:600px) and (device-height:1280px) {
+            #divSquare {
+                width: 600px;
+                height: 600px;
+            }
+        }
+
+        /* 1280 x 720 Landscape */
+        @media only screen and (device-width:1280px) and (device-height:720px) {
+            #divSquare {
+                width: 600px;
+                height: 600px;
+            }
+        }
+        /* 720 x 1280 Portrait */
+        @media only screen and (device-width:720px) and (device-height:1280px) {
+            #divSquare {
+                width: 600px;
+                height: 600px;
+            }
+        }
+
+        /* 1280 x 768 Landscape */
+        @media only screen and (device-width:1280px) and (device-height:768px) {
+            #divSquare {
+                width: 640px;
+                height: 640px;
+            }
+        }
+        /* 768 x 1280 Portrait */
+        @media only screen and (device-width:768px) and (device-height:1280px) {
+            #divSquare {
+                width: 640px;
+                height: 640px;
+            }
+        }
+        /* 1360 x 768 Landscape */
+        @media only screen and (device-width:1360px) and (device-height:768px) {
+            #divSquare {
+                width: 640px;
+                height: 640px;
+            }
+        }
+        /* 768 x 1360 Portrait */
+        @media only screen and (device-width:768px) and (device-height:1360px) {
+            #divSquare {
+                width: 640px;
+                height: 640px;
+            }
+        }
+        /* 1366 x 768 Landscape */
+        @media only screen and (device-width:1366px) and (device-height:768px) {
+            #divSquare {
+                width: 640px;
+                height: 640px;
+            }
+        }
+        /* 768 x 1366 Portrait */
+        @media only screen and (device-width:768px) and (device-height:1366px) {
+            #divSquare {
+                width: 640px;
+                height: 640px;
+            }
+        }
+        /* WSXGA Landscape */
+        @media only screen and (device-width:1680px) and (device-height:1050px) {
+            #divSquare {
+                width: 900px;
+                height: 900px;
+            }
+        }
+        /* WSXGA Portrait */
+        @media only screen and (device-width:1050px) and (device-height:1680px) {
+            #divSquare {
+                width: 900px;
+                height: 900px;
+            }
+        }
+        /* HD1080 Landscape */
+        @media only screen and (device-width:1920px) and (device-height:1080px) {
+            #divSquare {
+                width: 930px;
+                height: 930px;
+            }
+        }
+        /* HD1080 Portrait */
+        @media only screen and (device-width:1080px) and (device-height:1920px) {
+            #divSquare {
+                width: 930px;
+                height: 930px;
+            }
+        }
+        /* 2K Landscape */
+        @media only screen and (device-width:2048px) and (device-height:1080px) {
+            #divSquare {
+                width: 930px;
+                height: 930px;
+            }
+        }
+        /* 2K */
+        @media only screen and (device-width:1080px) and (device-height:2048px) {
+            #divSquare {
+                width: 930px;
+                height: 930px;
+            }
+        }
+        /* WUXGA Landscape */
+        @media only screen and (device-width:1200px) and (device-height:1920px) {
+            #divSquare {
+                width: 1090px;
+                height: 1090px;
+            }
+        }
+        /* QXGA Landscape */
+        @media only screen and (device-width:2048px) and (device-height:1536px) {
+            #divSquare {
+                width: 1400px;
+                height: 1400px;
+            }
+        }
+        /* QXGA Portrait */
+        @media only screen and (device-width:1536px) and (device-height:2048px) {
+            #divSquare {
+                width: 1400px;
+                height: 1400px;
+            }
+        }
+        /* WQXGA Landscape */
+        @media only screen and (device-width:2560px) and (device-height:1600px) {
+            #divSquare {
+                width: 1450px;
+                height: 1450px;
+            }
+        }
+        /* WQXGA Portrait */
+        @media only screen and (device-width:1600px) and (device-height:2560px) {
+            #divSquare {
+                width: 1450px;
+                height: 1450px;
+            }
+        }
+        /* QSXGA Landscape */
+        @media only screen and (device-width:2560px) and (device-height:2048px) {
+            #divSquare {
+                width: 1900px;
+                height: 1900px;
+            }
+        }
+        /* QSXGA Portrait */
+        @media only screen and (device-width:2048px) and (device-height:2560px) {
+            #divSquare {
+                width: 1900px;
+                height: 1900px;
+            }
+        }
+        /* Other */
+        @media only screen and (device-width:2560px) and (device-height:1440px){
+            #divSquare{
+                width:1440px;
+                height:1440px;
+            }
+        }
+        /* Portrait */
+        @media only screen and (device-width:1440px) and (device-height:2560px){
+            #divSquare{
+                width:1440px;
+                height:1440px;
+            }
+        }
+        
+        /* WebTV Landscape only... probably no longer in use */
+        @media only screen and (device-width:544px) and (device-height:376px) {
+            #divSquare {
+                width: 400px;
+                height: 400px;
+            }
+        }
+    </style>
+
+<script type="text/javascript">
+    function init ()
+    {
+        showCurrentTime ();
+        //setInterval ("showCurrentTime ()", 1000);
+        setInterval(function () { ticker.postMessage({ cmd: '' }) }, 1000);
+    }
+
+    function showCurrentTime ()
+    {
+        var Now = new Date();
+        var Seconds = Now.getSeconds();
+        var Minutes = Now.getMinutes();
+        var Hours   = Now.getHours() + Minutes / 60;
+
+        document.getElementById("seconds").setAttribute('transform', 'rotate(' + (Seconds * 6) + ')');
+        document.getElementById("minutes").setAttribute('transform', 'rotate(' + (Minutes * 6) + ')');
+        document.getElementById("hours").setAttribute('transform', 'rotate(' + (Hours * 30) + ')');
+
+        /* Workaround for Opera 8.x:
+            * (Whithout this, Opera 8.x initially shows the correct time, but does not
+            * update the screen, afterwards. 
+            * Not needed in Opara 9.0 Technical Preview 1.
+            * Also needed for Opera 9.0 Technical Preview 2 (Build 8212).
+            * Not needed in Opera 9.00 Weekly Preview (Build 8219).
+            */
+        if (navigator.userAgent.search (/Opera.[8]\./) >= 0) {
+            var s = document.getElementById("theSVG").getAttribute('style');
+            if (s) {
+                //alert ("fix");
+                s.display = 'block';
+                document.getElementById("theSVG").setAttribute('style', s);
+            }
+        }
+    }
+</script>
+<script type="text/javascript">
+var iHeight, iWidth, iMaxh, iMaxw
+function center(el) {
+    //return;
+    el.setAttribute('style', '');
+    var h = getAvailHeight();
+    h = (h < 240) ? screen.availHeight : h;
+    var w = getAvailWidth();
+    w = (w < 240) ? screen.availWidth : w;
+    var max = Math.min(h, w);
+    if (max < iMaxw || max == screen.width || max == screen.height) {
+        el.style.width = max + 'px';
+        el.style.height = max + 'px';
+        iHeight = max; iWidth = max;
+    } else { iHeight = iMaxh; iWidth = iMaxw; }
+    el.style.top = (h - iHeight) / 2 + 'px';
+    el.style.left = (w - iWidth) / 2 + 'px';
+}
+function getAvailHeight() {
+    if (document.body && document.body.offsetHeight) { return document.body.offsetHeight; }
+    if (window.innerHeight) { return window.innerHeight; }
+    if (document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.offsetHeight) { return document.documentElement.offsetHeight; }
+}
+function getAvailWidth() {
+    if (document.body && document.body.offsetWidth) { return document.body.offsetWidth; }
+    if (window.innerWidth) { return window.innerWidth; }
+    if (document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.offsetWidth) { return document.documentElement.offsetWidth; }
+}
+        function toggleFullScreen() {
+            var el = document.body;
+            if (!document.fullscreenElement &&    // alternative standard method
+                !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  // current working methods
+                if (el.requestFullscreen) {
+                    el.requestFullscreen();
+                } else if (el.msRequestFullscreen) {
+                    el.msRequestFullscreen();
+                } else if (el.mozRequestFullScreen) {
+                    el.mozRequestFullScreen();
+                } else if (el.webkitRequestFullscreen) {
+                    el.webkitRequestFullscreen(el.ALLOW_KEYBOARD_INPUT);
+                }
+                document.getElementById('cmdFSon').style.display = 'none';
+                document.getElementById('cmdFSoff').style.display = 'inline-block';
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+                document.getElementById('cmdFSon').style.display = 'inline-block';
+                document.getElementById('cmdFSoff').style.display = 'none';
+            }
+            //document.getElementById('txtinput').focus();
+        }
+</script>
+
+<title>Edge Wallclock</title>
+</head>
+<body onresize="center(document.getElementById('divSquare'));" oncontextmenu="return false" onfocus="document.getElementById('q').focus();">
+<div id="divSearch" class="layer0">
+<form name="frmSearch" id="frmSearch" action="http://www.bing.com/search" target="Searchresults" method="get" onsubmit="return false;">
+<input type="search" name="q" id="q" tabindex="0" onfocus="this.select();" required="required" style="width:380px; height:40px; font-size:1.5em; margin-top:5px;padding-left:1em" autofocus="autofocus"/>
+<button type="submit" id="cmdSearch" name="cmdSearch" onclick="frmSearch.submit();" form="frmSearch"><img alt="Search" src="data:image/png;base64,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" style="float:right;border:none;margin-left:0px;"/></button>
+</form>
+</div>
+    <div id="divSquare" class="layer0">
+        <div id="divbg" class="layer1" style="position:absolute;top:0; left:0;bottom:0;right:0;background-color:transparent;"></div>
+        <div id="divneon" class="layer1 blink" style="position:absolute;top:0; left:0;bottom:0;right:0;background-color:transparent;"></div>
+        <svg xmlns:svg="http://www.w3.org/2000/svg" id="theSVG" class="layer5" style="display: block;" viewBox="0 0 480 480" width="480" height="480" version="1.1">
+
+            <defs>
+                <filter id="dropShadowFilter" filterUnits="userSpaceOnUse">
+                    <feColorMatrix result="lightened" in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0"></feColorMatrix>
+                    <feGaussianBlur result="blurred" in="lightened" stdDeviation="3" ></feGaussianBlur>
+                    <feMorphology result="eroded" in="blurred" operator="erode" radius="2" ></feMorphology>
+                    <feOffset result="moved" in="eroded" dx="5" dy="1" ></feOffset>
+                    <feMerge>
+                        <feMergeNode in="moved" ></feMergeNode>
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                </filter>
+            </defs>
+
+            <g id="Clock">
+                <g filter="url(&quot;#dropShadowFilter&quot;)">
+                    <g id="hands" transform="translate(240 240) scale(.8)">
+                        <!-- Helper elements for adjusting the center of the clock
+                         to the background image:
+                    <svg:line x1="0" y1="-125" x2="0" y2="125" stroke-width="1" stroke="gray"/>
+                    <svg:line x1="-125" y1="0" x2="125" y2="0" stroke-width="1" stroke="gray"/>
+                    <svg:circle cx="0" cy="0" r="8.75" fill="yellow" transform="translate(0,0)"/>
+                    -->
+                        <path id="hours" fill="#202020" opacity="1" stroke="rgba(18, 60, 199, 1)" stroke-width="10" transform="rotate(438)" d="M 0 -170 L -25 -130 C -32.5 -115 -30 -95 -10 -90 L -10 -15 A 18 18 0 0 0 -10 15 C -10 22.5 -12.5 47.5 -15 55 A 57.5 57.5 0 0 0 15 55 C 12.5 47.5 10 22.5 10 15 A 18 18 0 0 0 10 -15 L 10 -90 C 30 -95 32.5 -115 25 -130 Z M -5 -5 A 5 5 0 0 1 5 5 A 5 5 0 0 1 -5 -5 Z">
+                            <!--svg:animateTransform id="hourTransform" attributeName="transform" type="rotate" calcMode="linear" begin="60s" keyTimes="0.0; 0.004; 1.0" values="0; 0.5; 0.5" dur="60s" accumulate="sum" repeatCount="indefinite"/-->
+                            <!--svg:animateTransform id="hourTransform" attributeName="transform" type="rotate" by="0.5" calcMode="discrete" begin="60s" dur="60s" accumulate="sum" repeatCount="indefinite" /-->
+                        </path>
+
+                        <path id="minutes" fill="#202020" opacity="1" stroke="yellow" stroke-width="10" transform="rotate(216)" d="M 0 -250 L -15 -120 L -10 -15 A 18 18 0 0 0 -10 15 C -10 22.5 -12.5 47.5 -15 55 A 57.5 57.5 0 0 0 15 55 C 12.5 47.5 10 22.5 10 15 A 18 18 0 0 0 10 -15 L 15 -120 Z M -5 -5 A 5 5 0 0 1 5 5 A 5 5 0 0 1 -5 -5 Z">
+                            <!--svg:animateTransform id="minuteTransform" attributeName="transform" type="rotate" calcMode="linear" begin="60s" keyTimes="0.0; 0.004; 1.0" values="0; 6; 6" dur="60s" accumulate="sum" repeatCount="indefinite"/-->
+                            <!--svg:animateTransform id="minuteTransform" attributeName="transform" type="rotate" by="6" calcMode="discrete" begin="60s" dur="60s" accumulate="sum" repeatCount="indefinite" /-->
+                        </path>
+
+                        <g id="seconds" transform="rotate(90)">
+                            <circle fill="red" stroke="red" cx="0" cy="0" r="5" ></circle>
+                            <line id="secondsLine" stroke="red" stroke-width="5" x1="0" y1="0" x2="0" y2="-247" ></line>
+                            <!--svg:animateTransform attributeName="transform" type="rotate" by="6" calcMode="discrete" dur="1s" accumulate="sum" repeatCount="indefinite"/-->
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <progress id="satellite" class="layer5 blink"></progress>
+        <div id="divlabel" class="layer5" style="position:absolute;bottom:0;left:0;height:1em;width:100%;text-align:center">label</div>
+</div>
+    <div id="divMenu" style="position:fixed;top:10px;right:10px; text-align:center;vertical-align:middle;cursor:pointer;z-index:99;">
+            <button id="cmdFSon" style="display:none" class="toolbar" type="button" onclick="toggleFullScreen();">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" style="width:100%;height:100%;" version="1.1"><path style="opacity: 0; stroke-linejoin: round;" opacity="0" fill="none" stroke="#000fff" stroke-linejoin="round" stroke-width="3" transform="matrix(1 0 0 1 4 4)" d="M 25.545 23.328 L 17.918 15.623 L 25.534 8.007 L 27.391 9.864 L 29.649 1.436 L 21.222 3.694 L 23.058 5.53 L 15.455 13.134 L 7.942 5.543 L 9.809 3.696 L 1.393 1.394 L 3.608 9.833 L 5.456 8.005 L 12.98 15.608 L 5.465 23.123 L 3.609 21.268 L 1.351 29.695 L 9.779 27.438 L 7.941 25.6 L 15.443 18.098 L 23.057 25.791 L 21.19 27.638 L 29.606 29.939 L 27.393 21.5 Z"></path><path fill="#000" stroke="none" transform="matrix(1 0 0 1 4 4)" d="M 25.545 23.328 L 17.918 15.623 L 25.534 8.007 L 27.391 9.864 L 29.649 1.436 L 21.222 3.694 L 23.058 5.53 L 15.455 13.134 L 7.942 5.543 L 9.809 3.696 L 1.393 1.394 L 3.608 9.833 L 5.456 8.005 L 12.98 15.608 L 5.465 23.123 L 3.609 21.268 L 1.351 29.695 L 9.779 27.438 L 7.941 25.6 L 15.443 18.098 L 23.057 25.791 L 21.19 27.638 L 29.606 29.939 L 27.393 21.5 Z"></path><rect style="opacity: 0;" opacity="0" fill="#000000" stroke="#000" x="0" y="0" width="32" height="32" rx="0" ry="0" r="0"></rect></svg>
+            </button>
+            <button id="cmdFSoff" style="display:none;" class="toolbar" type="button" onclick="toggleFullScreen();">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" style="width:100%;height:100%" version="1.1"><path style="opacity: 0; stroke-linejoin: round;" opacity="0" fill="none" stroke="#000fff" stroke-linejoin="round" stroke-width="3" transform="matrix(1 0 0 1 4 4)" d="M 25.083 18.895 L 16.655 16.636 L 18.913 25.064 L 20.751 23.227 L 27.804 30.28 L 30.28 27.804 L 23.227 20.751 L 25.083 18.895 Z M 5.542 11.731 L 13.97 13.989 L 11.712 5.561 L 9.874 7.398 L 3.196 0.72 L 0.72 3.196 L 7.398 9.874 L 5.542 11.731 Z M 7.589 20.935 L 0.719 27.804 L 3.195 30.28 L 10.064 23.411 L 11.922 25.268 L 14.18 16.84 L 5.752 19.098 L 7.589 20.935 Z M 23.412 10.064 L 30.279 3.194 L 27.803 0.718 L 20.935 7.587 L 19.079 5.731 L 16.821 14.159 L 25.249 11.9 L 23.412 10.064 Z"></path><path fill="#000" stroke="none" transform="matrix(1 0 0 1 4 4)" d="M 25.083 18.895 L 16.655 16.636 L 18.913 25.064 L 20.751 23.227 L 27.804 30.28 L 30.28 27.804 L 23.227 20.751 L 25.083 18.895 Z M 5.542 11.731 L 13.97 13.989 L 11.712 5.561 L 9.874 7.398 L 3.196 0.72 L 0.72 3.196 L 7.398 9.874 L 5.542 11.731 Z M 7.589 20.935 L 0.719 27.804 L 3.195 30.28 L 10.064 23.411 L 11.922 25.268 L 14.18 16.84 L 5.752 19.098 L 7.589 20.935 Z M 23.412 10.064 L 30.279 3.194 L 27.803 0.718 L 20.935 7.587 L 19.079 5.731 L 16.821 14.159 L 25.249 11.9 L 23.412 10.064 Z"></path><rect style="opacity: 0;" opacity="0" fill="#000000" stroke="#000" x="0" y="0" width="32" height="32" rx="0" ry="0" r="0"></rect></svg>
+            </button>
+    </div>
+<script type="text/javascript">
+        function logevent(evt) {
+            if (window.console) { console.dir(evt);}
+        }
+        var ticker = new Worker('ticker.js');
+        ticker.onmessage = function (e) {
+            //alert(e.data);
+            document.getElementById("seconds").setAttribute('transform', 'rotate(' + (e.data.seconds * 6) + ')');
+            document.getElementById("minutes").setAttribute('transform', 'rotate(' + (e.data.minutes * 6) + ')');
+            document.getElementById("hours").setAttribute('transform', 'rotate(' + (e.data.hours * 30) + ')');
+
+        }
+        ticker.addEventListener('error', logevent, false);
+        //ticker.postMessage({cmd:'start'});
+
+        window.onload = function () {
+        document.getElementById('cmdFSon').style.display = (document.fullscreenEnabled || document.msFullscreenEnabled || document.mozFullscreenEnabled || document.webkitFullscreenEnabled) ? '' : 'none';
+
+            if (satellite.style.msContentZooming == '') { document.getElementById('satellite').style.display = 'block'; }
+        };
+        if ('onfullscreenchange' in document) {
+            document.onfullscreenchange = function () { center(document.getElementById('divSquare')); };
+        } else if ('onwebkitfullscreenchange' in document) {
+            document.onwebkitfullscreenchange = function () { center(document.getElementById('divSquare')); };
+        } else if ('onmozfullscreenchange' in document) {
+            document.onmozfullscreenchange = function () { center(document.getElementById('divSquare')); };
+        } else if ('onmsfullscreenchange' in document) {
+            document.onmsfullscreenchange = function () {
+                var el = document.getElementById('divSquare');
+                center(el);
+            };
+        };
+
+    iHeight = eval(document.getElementById('divSquare').clientWidth);
+    iWidth = iHeight; iMaxh = iHeight; iMaxw = iHeight;
+    center(document.getElementById('divSquare'));
+    init();
+</script>
+    </body>
+</html>
